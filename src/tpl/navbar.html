@@ -1,0 +1,18 @@
+<div ui-view="navbar">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">{{ navbar.title }}</a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active" ng-repeat="action in navbar.actions">
+          <a ui-sref="{{ action.state }}">{{ action.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="ui-view-container">
+  <div ui-view="content" class="{{ navbar.effect }}"></div>
+</div>
